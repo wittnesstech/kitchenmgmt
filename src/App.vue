@@ -8,20 +8,18 @@
       absolute
       overflow
       app
-      
     >
       <v-list>
         <v-list-tile>
           <v-list-tile-title class="title">Application</v-list-tile-title>
         </v-list-tile>
       </v-list>
-      <v-divider></v-divider>
-      <v-divider></v-divider>
-      <v-divider></v-divider>
+
       <v-list dense class="pt-0">
         <v-list-tile v-for="item in myRoutes" :key="item.title">
           <v-list-tile-action>
-<v-btn>t</v-btn>
+            <!-- <v-btn>t</v-btn> -->
+                        
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>

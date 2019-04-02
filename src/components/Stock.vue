@@ -5,12 +5,62 @@
         <h1 class="display-2 font-weight-bold mb-3">Inventory</h1>
       </v-flex>
     </v-layout>
+    <!-- layout dimensions??? 
+    text-sm-center text-lg-left wrap
+    -->
+
+    <!-- layout dimensions??? -->
+    <v-btn color="green" fab small v-on:click="addItem()">
+      <v-icon>add</v-icon>
+    </v-btn>
+    <v-layout row wrap v-for="item in inventory" >
+      <v-flex xs2>
+        <v-text-field label="Quantity" placeholder="Quantity purchased" :value="item.qty"></v-text-field>
+      </v-flex><v-flex xs2>
+        <v-text-field label="Name" placeholder="Item Name" :value="item.name"></v-text-field>
+        </v-flex><v-flex xs2>
+        <v-text-field label="Units" placeholder="Units" :value="item.units"></v-text-field>
+        </v-flex><v-flex xs2>
+        <v-text-field label="Cost" placeholder="Billed Cost" :value="item.cost"></v-text-field>
+        </v-flex><v-flex xs2>
+        <v-text-field label="Rate" placeholder="Unit Rate" :value="item.cost/item.qty"></v-text-field>
+      </v-flex>
+    </v-layout>
+
   </v-container>
 </template>
 
 <script>
 export default {
-  data: () => ({})
+  data: () => ({
+    inventory: [
+      {
+        name: "apples",
+        qty: "10",
+        units: "Kgs",
+        cost: 500
+      },
+      {
+        name: "Eggs",
+        qty: "1",
+        units: "Nos",
+        cost: 50
+      },
+      {
+        name: "aata",
+        qty: "1",
+        units: "Kgs",
+        cost: 100
+      }
+    ]
+  }),
+  methods: {
+    addItem: function() {
+      // alert("asd");
+      console.log("asd");
+      this.inventory.push({});
+    }
+  }
 };
 </script>
 
