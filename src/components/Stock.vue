@@ -13,20 +13,24 @@
     <v-btn color="green" fab small v-on:click="addItem()">
       <v-icon>add</v-icon>
     </v-btn>
-    <v-layout row wrap v-for="item in inventory" >
+    <v-layout row wrap v-for="item in inventory">
       <v-flex xs2>
-        <v-text-field label="Quantity" placeholder="Quantity purchased" :value="item.qty"></v-text-field>
-      </v-flex><v-flex xs2>
-        <v-text-field label="Name" placeholder="Item Name" :value="item.name"></v-text-field>
-        </v-flex><v-flex xs2>
-        <v-text-field label="Units" placeholder="Units" :value="item.units"></v-text-field>
-        </v-flex><v-flex xs2>
-        <v-text-field label="Cost" placeholder="Billed Cost" :value="item.cost"></v-text-field>
-        </v-flex><v-flex xs2>
-        <v-text-field label="Rate" placeholder="Unit Rate" :value="item.cost/item.qty"></v-text-field>
+        <v-text-field label placeholder="Quantity purchased" :value="item.qty"></v-text-field>
+      </v-flex>
+      <v-flex xs2>
+        <v-text-field dark label="x" placeholder="Item Name" :value="item.name"></v-text-field>
+      </v-flex>
+      <v-flex xs2>
+        <v-select :items="allUnits" label :value="item.unit"></v-select>
+        <!-- <v-text-field light label="in" placeholder="Units" :value="item.units"></v-text-field> -->
+      </v-flex>
+      <v-flex xs2>
+        <v-text-field bold label="Rs" placeholder="Billed Cost" :value="item.cost"></v-text-field>
+      </v-flex>
+      <v-flex xs2>
+        <v-text-field primary label="@" placeholder="Unit Rate" :value="item.cost/item.qty"></v-text-field>
       </v-flex>
     </v-layout>
-
   </v-container>
 </template>
 
@@ -52,7 +56,8 @@ export default {
         units: "Kgs",
         cost: 100
       }
-    ]
+    ],
+    allUnits: ["Nos", "Kgs", "Lits"]
   }),
   methods: {
     addItem: function() {
