@@ -1,6 +1,6 @@
 <template>
   <v-app :dark="dark">
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="primaryDrawer.model"
       :permanent="primaryDrawer.type === 'permanent'"
       :temporary="primaryDrawer.type === 'temporary'"
@@ -18,8 +18,6 @@
       <v-list dense class="pt-0">
         <v-list-tile v-for="item in myRoutes" :key="item.title">
           <v-list-tile-action>
-            <!-- <v-btn>t</v-btn> -->
-                        
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
@@ -34,28 +32,24 @@
         @click.stop="primaryDrawer.model = !primaryDrawer.model"
       ></v-toolbar-side-icon>
       <v-toolbar-title>Mess Masi</v-toolbar-title>
-    </v-toolbar>
+    </v-toolbar> -->
     <v-content>
       <v-container fluid>
         <v-layout align-center justify-center>
-          <v-flex xs10>
+          <!-- <v-flex xs10>
             <v-card>
               <v-card-text>
-                <v-layout row wrap>
-                  <v-flex xs12 md6>
-                    <span>Welcome</span>
-                  </v-flex>
-
+                <v-layout row wrap> -->
                   <router-view/>
-                </v-layout>
-              </v-card-text>
-              <v-card-actions>
+                <!-- </v-layout>
+              </v-card-text> -->
+              <!-- <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn flat>Cancel</v-btn>
                 <v-btn flat color="primary">Submit</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
+              </v-card-actions> -->
+            <!-- </v-card>
+          </v-flex> -->
         </v-layout>
       </v-container>
     </v-content>
@@ -78,13 +72,10 @@ export default {
       floating: false,
       mini: true
     },
-    footer: {
-      // inset: true
-    },
-    myRoutes: [
-      { title: "Home", icon: "dashboard" },
-      { title: "About", icon: "question_answer" }
-    ]
+    // myRoutes: [
+    //   { title: "Home", icon: "dashboard" },
+    //   { title: "About", icon: "question_answer" }
+    // ]
   })
 };
 </script>
