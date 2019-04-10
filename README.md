@@ -1,29 +1,43 @@
-# vuetest
+# Qari Saab
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+A `Data Visualisation` project
+#
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Can we dynamically plot **Al-Quran** on a `HTML` *canvas* using `JavaScript`...?
 
-### Run your tests
-```
-npm run test
-```
+Here we *GO*
 
-### Lints and fixes files
-```
-npm run lint
-```
+#
+Made the app available at [Qari Saab](https://qarisaab.surge.sh)
+We are now on [npm](https://www.npmjs.com/package/qarisaab)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Following was observed, and will serve as the TODO list :-
+* [ ] Strange look on mobile screens
+
+* [ ] Also very slow on mobiles, maybe it's something related to DPI
+
+
+1. Design needs work
+   * [ ] Better UI based on [Vuetify](https://github.com/vuetifyjs/vuetify)
+   * [ ] FG & BG colors suck
+   * [ ] font size relatively small
+   * [ ] The string are less physics-sy
+   * [ ] long and short ayahs / relative words as to screen size
+   * [ ] Beads need to engulf the word completely and go invisible soon
+2. Functionaliity improvements
+   * [ ] Add Facebook Login feature
+   * [ ] Add Firebase Database
+   * [ ] Reset / Reload button or something
+   * [ ] SOUND
+   * [ ] Multi-lingual stuff is required (Google translate **API** ?)
+   * [ ] Click to do something *Interactively*
+   * [x] **Draggable** canvas
+        * [ ] Fix the draggable problem.... mousex ||  m.x
+   * [ ] Selectable surahs / ayahs (need more *ideas*)
+3. Drama Elements  
+   * [x] Need to add versioning system 
+   * [x] Publish to [NPM](https://www.npmjs.com/package/qarisaab)
+   * [x] Add [Vue.js](https://github.com/vuejs/vue) framework
+
+> **PS:** Markdown is *sleek,* so here's a quick [**Cheat Sheet**](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and  [this guy](https://www.toptal.com/web/markdown-the-writing-tool-for-software-developers) explains why we need to learn this =>
