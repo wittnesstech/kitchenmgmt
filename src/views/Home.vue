@@ -1,28 +1,19 @@
 <template>
-  <v-container xs12>
-    Home???
-    <!-- <router-view/> -->
-  </v-container>
+  <div>
+    <Stock/>
+    <Catering/>
+  </div>
 </template>
 
 <script>
 import HelloWorld from "../components/HelloWorld";
-import Example from "../components/Example"
+import Stock from "../components/Stock";
+import Catering from "../components/Catering";
 export default {
   components: {
     HelloWorld,
-    Example
+    Stock,
+    Catering
   }
 };
 </script>
-<style scoped>
-/* .div {
-  padding: 0;
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  } */
-</style>
-

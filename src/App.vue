@@ -1,62 +1,65 @@
 <template>
   <v-app :dark="dark">
-    <v-navigation-drawer
-    id="drawer"
+    <!-- <v-navigation-drawer
       v-model="primaryDrawer.model"
       :permanent="primaryDrawer.type === 'permanent'"
-      
-      mini-variant.sync
+      :temporary="primaryDrawer.type === 'temporary'"
+      :mini-variant="true"
       absolute
       overflow
       app
     >
-    <v-icon>"mdi-home"</v-icon>
-    <v-list dense class="pt-0">
-      <v-list-tile
-        v-for="item in myRoutes"
-        :key="item.name"
-        :to="item.path"
-      >
-        <v-list-tile-action>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-tile-action>
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-title class="title">Application</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
 
-        <v-list-tile-content>
-          <v-list-tile-title :to="item.path">{{ item.name }}</v-list-tile-title>
-        </v-list-tile-content>
-
-      </v-list-tile>
-    </v-list>
-    <!-- <v-btn to="/about" tag="button">about</v-btn>
-      
-      <router-link class="nav-link" to="/home" tag="button">Home</router-link>
-      <router-link to="/example" tag="button">Example</router-link> -->
+      <v-list dense class="pt-0">
+        <v-list-tile v-for="item in myRoutes" :key="item.title">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
     </v-navigation-drawer>
     <v-toolbar :clipped-left="primaryDrawer.clipped" app absolute>
       <v-toolbar-side-icon
         v-if="primaryDrawer.type !== 'permanent'"
         @click.stop="primaryDrawer.model = !primaryDrawer.model"
       ></v-toolbar-side-icon>
-      <v-toolbar-title>Qari Saab</v-toolbar-title>
-    </v-toolbar>
+      <v-toolbar-title>Mess Masi</v-toolbar-title>
+    </v-toolbar> -->
     <v-content>
       <v-container fluid>
         <v-layout align-center justify-center>
-          <v-flex xs10>
-            <router-view/>
-          </v-flex>
+          <!-- <v-flex xs10>
+            <v-card>
+              <v-card-text>
+                <v-layout row wrap> -->
+                  <router-view/>
+                <!-- </v-layout>
+              </v-card-text> -->
+              <!-- <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn flat>Cancel</v-btn>
+                <v-btn flat color="primary">Submit</v-btn>
+              </v-card-actions> -->
+            <!-- </v-card>
+          </v-flex> -->
         </v-layout>
       </v-container>
     </v-content>
-    <v-footer :inset="true" app >
-      <span v-on:click="showRoutes()" class="px-3">&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer :inset="true" app>
+      <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import routes from "./router";
-// import Router from "vue-router";
 export default {
   name: "App",
   data: () => ({
@@ -69,25 +72,10 @@ export default {
       floating: false,
       mini: true
     },
-    myRoutes: routes.options.routes
     // myRoutes: [
     //   { title: "Home", icon: "dashboard" },
     //   { title: "About", icon: "question_answer" }
     // ]
-  }),
-  methods:{
-    showRoutes:()=>{
-      console.log(myRoutes);
-    },
-    goto:(pathstring)=>{
-      this.$router.push(pathstring)
-    }
-  }
+  })
 };
 </script>
-<style scoped>
-#drawer {
- margin-top: 64px !important;
- text-transform: capitalize;
-}
-</style>
